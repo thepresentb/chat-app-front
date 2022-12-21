@@ -11,7 +11,7 @@ import {
 const registerUser = async (userInfo, dispatch) => {
   dispatch(registerStart());
   try {
-    const res = await axios.post(`https://chat-app-one-amber.vercel.app/api/auth/register`, userInfo);
+    const res = await axios.post(`https://chat-app-liard-zeta.vercel.app/api/auth/register`, userInfo);
     if (res.data.statusbar === "error") {
       return dispatch(registerError(res.data));
     }
@@ -24,7 +24,7 @@ const registerUser = async (userInfo, dispatch) => {
 const loginUser = async (data, dispatch, navigate) => {
   dispatch(loginStart());
   try {
-    const res = await axios.post(`https://chat-app-one-amber.vercel.app/api/auth/login`, data);
+    const res = await axios.post(`https://chat-app-liard-zeta.vercel.app/api/auth/login`, data);
     if (res.data.statusbar === "error") {
       return dispatch(loginError(res.data));
     }

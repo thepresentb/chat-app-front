@@ -3,7 +3,7 @@ import { addSeenUserToListRoom } from "../slice/roomSlice";
 
 const addMessageToDB = async (data) => {
   const token = localStorage.getItem("token");
-  await axios.post(`https://chat-app-one-amber.vercel.app/api/messages/create`, data, {
+  await axios.post(`https://chat-app-liard-zeta.vercel.app/api/messages/create`, data, {
     headers: { token: token },
   });
 };
@@ -13,7 +13,7 @@ const addSeenUser = async (data, dispatch) => {
   dispatch(addSeenUserToListRoom(data));
 
   // add seen user vao to database
-  await axios.post(`https://chat-app-one-amber.vercel.app/api/messages/addSeenUser`, data, {
+  await axios.post(`https://chat-app-liard-zeta.vercel.app/api/messages/addSeenUser`, data, {
     headers: { token: token },
   });
 };
@@ -21,7 +21,7 @@ const addSeenUser = async (data, dispatch) => {
 const getListUserSearched = async (username) => {
   const token = localStorage.getItem("token");
   try {
-    const res = await axios.get(`https://chat-app-one-amber.vercel.app/api/users/searchList`, {
+    const res = await axios.get(`https://chat-app-liard-zeta.vercel.app/api/users/searchList`, {
       params: {
         username: username,
       },
@@ -38,7 +38,7 @@ const getListUserSearched = async (username) => {
 const getUserSearched = async (username) => {
   const token = localStorage.getItem("token");
   try {
-    const res = await axios.get(`https://chat-app-one-amber.vercel.app/api/users/search`, {
+    const res = await axios.get(`https://chat-app-liard-zeta.vercel.app/api/users/search`, {
       params: {
         username: username,
       },
@@ -56,7 +56,7 @@ const createRoomSearched = async (data) => {
   const token = localStorage.getItem("token");
   try {
     const res = await axios.post(
-      `https://chat-app-one-amber.vercel.app/api/rooms/searchRoom`,
+      `https://chat-app-liard-zeta.vercel.app/api/rooms/searchRoom`,
       {
         listUserId: data,
       },
@@ -74,7 +74,7 @@ const createRoomGroup = async (data) => {
   const token = localStorage.getItem("token");
   try {
     const res = await axios.post(
-      `https://chat-app-one-amber.vercel.app/api/rooms/createRoom`,
+      `https://chat-app-liard-zeta.vercel.app/api/rooms/createRoom`,
       {
         listId: data,
       },
@@ -92,7 +92,7 @@ const addUserToCurrentGroup = async (data) => {
   const token = localStorage.getItem("token");
   try {
     const res = await axios.post(
-      `https://chat-app-one-amber.vercel.app/api/rooms/addUserToRoom`,
+      `https://chat-app-liard-zeta.vercel.app/api/rooms/addUserToRoom`,
       {
         roomId: data.roomId,
         userId: data.userId,
@@ -111,7 +111,7 @@ const removeUserToCurrentGroup = async (data) => {
   const token = localStorage.getItem("token");
   try {
     const res = await axios.post(
-      `https://chat-app-one-amber.vercel.app/api/rooms/removeUserToRoom`,
+      `https://chat-app-liard-zeta.vercel.app/api/rooms/removeUserToRoom`,
       {
         roomId: data.roomId,
         userId: data.userId,
@@ -129,7 +129,7 @@ const removeUserToCurrentGroup = async (data) => {
 const getListRoom = async (userId) => {
   const token = localStorage.getItem("token");
   try {
-    const res = await axios.get(`https://chat-app-one-amber.vercel.app/api/users/${userId}`, {
+    const res = await axios.get(`https://chat-app-liard-zeta.vercel.app/api/users/${userId}`, {
       headers: {
         token: token,
       },
