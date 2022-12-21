@@ -10,7 +10,7 @@ const socketSlice = createSlice({
   initialState,
   reducers: {
     initSocket: (state) => {
-      state.socket = io("https://chat-app-front-qzr6.vercel.app", {
+      state.socket = io("https://chat-app-one-amber.vercel.app", {
         withCredentials: true,
         extraHeaders: {
           "my-custom-header": "abcd",
