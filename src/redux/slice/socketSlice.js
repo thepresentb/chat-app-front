@@ -10,12 +10,15 @@ const socketSlice = createSlice({
   initialState,
   reducers: {
     initSocket: (state) => {
-      state.socket = io("https://chat-app-one-amber.vercel.app", {
-        withCredentials: true,
-        extraHeaders: {
-          "my-custom-header": "abcd",
-        },
-      });
+      state.socket = io(
+        "https://chat-app-one-amber.vercel.app"
+        // {
+        //   withCredentials: true,
+        //   extraHeaders: {
+        //     "my-custom-header": "abcd",
+        //   },
+        // }
+      );
     },
   },
 });
