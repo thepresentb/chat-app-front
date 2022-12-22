@@ -8,7 +8,7 @@ function RoomProvider({ children }) {
   const [receiveMessage, setReceiveMessage] = useState({});
   const [chattingUser, setChattingUser] = useState(null);
   const initRoomDetails = async (data) => {
-    const res = await axios.post(`http://localhost:8080/api/rooms/getRoom`, data);
+    const res = await axios.post(`https://chat-app-liard-zeta.vercel.app/api/rooms/getRoom`, data);
     setRoomDetails(res.data);
   };
 
