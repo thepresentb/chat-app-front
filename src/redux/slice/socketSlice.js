@@ -11,7 +11,7 @@ const socketSlice = createSlice({
   reducers: {
     initSocket: (state) => {
       state.socket = io(
-        "https://socket-server-omega.vercel.app"
+        "https://socket-server-omega.vercel.app:3001"
         // , {
         //   withCredentials: true,
         //   extraHeaders: {
