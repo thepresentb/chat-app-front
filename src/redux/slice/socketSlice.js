@@ -10,15 +10,12 @@ const socketSlice = createSlice({
   initialState,
   reducers: {
     initSocket: (state) => {
-      state.socket = io(
-        "https://chat-app-liard-zeta.vercel.app"
-        // {
-        //   withCredentials: true,
-        //   extraHeaders: {
-        //     "my-custom-header": "abcd",
-        //   },
-        // }
-      );
+      state.socket = io("https://chat-app-liard-zeta.vercel.app:3000", {
+        withCredentials: true,
+        extraHeaders: {
+          "my-custom-header": "abcd",
+        },
+      });
     },
   },
 });
