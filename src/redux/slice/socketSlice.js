@@ -10,15 +10,9 @@ const socketSlice = createSlice({
   initialState,
   reducers: {
     initSocket: (state) => {
-      state.socket = io(
-        "https://socket-server-omega.vercel.app:3001"
-        // , {
-        //   withCredentials: true,
-        //   extraHeaders: {
-        //     "my-custom-header": "present",
-        //   },
-        // }
-      );
+      state.socket = io("https://socket-sever.onrender.com", {
+        transports: ["websocket"],
+      });
     },
   },
 });
